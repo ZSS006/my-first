@@ -1,0 +1,24 @@
+body{
+    front-family:arial;
+    baground: #c90d0d;
+    text-align:center;
+}
+
+.top{
+    baground:black;
+    color:rgb(170, 227, 83);
+    padding: 20px;
+}
+.top a{
+    color:rgb(158, 239, 155);
+    text-decoration:none;
+    margin: 10px;
+}
+.home{
+    margin-top: 50px;
+}
+button{
+    padding: 10px 20px;
+    background:rgb(37, 62, 122);
+    border:none;
+}
