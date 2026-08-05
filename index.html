@@ -1,28 +1,429 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <Link rel="stylesheet"
-    href ="style.css" type="text/css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Art of Living</title>
+  <!-- SEO -->
+  <meta name="description" content="Elite Interior Studio: Art of Living. Bespoke luxury interior design for residential, commercial, and hospitality spaces." />
+  <link rel="canonical" href="https://eliteinteriorstudio.com/" />
+  <meta property="og:title" content="Elite Interior Studio — Art of Living" />
+  <meta property="og:description" content="Bespoke luxury interiors that tell your story." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪞</text></svg>" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Swiper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <nav class="site-nav" aria-label="primary navigation">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-ring mb-4"></div>
+    <div>Elite Interior</div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div id="scrollProgress"></div>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Floating buttons -->
+  <a href="#" class="float-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+123456789" class="float-btn call"><i class="fas fa-phone-alt"></i></a>
+  <a href="mailto:info@eliteinterior.com" class="float-btn email"><i class="fas fa-envelope"></i></a>
+
+  <!-- Back to top -->
+  <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#"><span>Interior</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO – SLIDING IMAGES (Swiper) -->
+  <section id="home" class="hero-swiper swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: url('https://media.designcafe.com/wp-content/uploads/2023/01/31151451/Contemporary-interior-design-for-living-room.jpg');">
+        <div class="hero-content" data-aos="fade-up">
+          <h1>Art of <span class="gold">Living</span></h1>
+          <p>Elite Interior Studio — where stories become spaces</p>
+          <a href="#contact" class="btn btn-gold mt-4">Begin Your Journey</a>
+        </div>
+      </div>
+      <div class="swiper-slide" style="background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+        <div class="hero-content" data-aos="fade-up">
+          <h1>Timeless <span class="gold">Elegance</span></h1>
+          <p>Bespoke luxury for the discerning</p>
+          <a href="#projects" class="btn btn-gold mt-4">View Portfolio</a>
+        </div>
+      </div>
+      <div class="swiper-slide" style="background-image: url('https://www.decormyplace.in/blogimg/3256827793%20BHK%20Interior%20Design%20Cost%20Pune.jpg');">
+        <div class="hero-content" data-aos="fade-up">
+          <h1>Modern <span class="gold">Refinement</span></h1>
+          <p>Where art meets architecture</p>
+          <a href="#services" class="btn btn-gold mt-4">Explore Services</a>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <span class="text-uppercase tracking-wider gold fw-bold small"></span>
+          <h2 class="display-4 serif mt-2">Where <span class="gold">Vision</span> Meets Craft</h2>
+          <p class="lead mt-3" style="font-weight: 300;">
+            Elite Interior Studio is a boutique design house specializing in luxury residential and commercial interiors. With a passion for timeless elegance, we create spaces that inspire.
+          </p>
+          <p class="mt-3 text-muted">
+            Our award-winning team blends classical sophistication with modern minimalism. We manage your project seamlessly from conceptual 3D renders to final turnkey delivery.
+          </p>
+          <div class="row mt-4 g-3">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <span class="gold me-2 fs-5">✓</span>
+                <span>Bespoke Space Planning</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <span class="gold me-2 fs-5">✓</span>
+                <span>Custom Furniture Design</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <span class="gold me-2 fs-5">✓</span>
+                <span>3D Architectural Renders</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <span class="gold me-2 fs-5">✓</span>
+                <span>End-to-End Execution</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-2">
+            <a href="#services" class="btn btn-gold me-3">Explore Services</a>
+            <a href="#contact" class="btn btn-outline-dark">Get In Touch</a>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="position-relative">
+            <img src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded shadow-lg w-100" alt="Interior Design Studio">
+          </div>
+      </div>
+      </div>
+  </section>
 
 
-    <ul>
-        <li><a href="#"
-        class="active">HOME</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">CONTACT</a></li>
-    </ul>
+  <!-- Why Choose Us -->
+  <section class="section-padding bg-primary-custom text-white">
+    <div class="container">
+      <h2 class="text-center gold display-5 serif" data-aos="fade-up">Why Choose Us</h2>
+      <div class="row mt-5 g-4">
+        <div class="col-md-4" data-aos="zoom-in">
+          <div class="glass-card text-center">
+            <i class="fas fa-gem fa-3x gold mb-3"></i>
+            <h4 class="serif">Timeless Design</h4>
+            <p>Classic aesthetics that never fade.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="glass-card text-center">
+            <i class="fas fa-pencil-ruler fa-3x gold mb-3"></i>
+            <h4 class="serif">Bespoke Solutions</h4>
+            <p>Tailored to your unique style.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="glass-card text-center">
+            <i class="fas fa-trophy fa-3x gold mb-3"></i>
+            <h4 class="serif">Award Winning</h4>
+            <p>Recognized for excellence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div class="hero">
+  <!-- Services -->
+  <section id="services" class="section-padding">
+    <div class="container">
+      <h2 class="text-center display-5 serif" data-aos="fade-up">Our <span class="gold">Services</span></h2>
+      <div class="row g-4 mt-4">
+        <div class="col-md-4" data-aos="flip-up">
+          <div class="card border-0 shadow-sm h-100 rounded-0">
+            <div class="card-body">
+              <h5 class="serif"><i class="fas fa-home gold me-2"></i>Residential Interior</h5>
+              <p>Luxury homes, apartments, villas.</p>
 
-       <img src="https://img.magnific.com/premium-photo/3d-render-modern-architecture-design-isolated-background-luxury-office-building-architects-sketch-overlay_407474-59359.jpg?semt=ais_hybrid&w=740&q=80"
-    alt=" HOME">
-     </div>
-     
+               <img src="https://media.designcafe.com/wp-content/uploads/2020/01/21001519/best-wall-decor-for-living-room.jpg" class="img-fluid shadow" alt="gallery">
 
-</nav>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-up" data-aos-delay="50">
+          <div class="card border-0 shadow-sm h-100 rounded-0">
+            <div class="card-body">
+              <h5 class="serif"><i class="fas fa-building gold me-2"></i>Commercial Interior</h5>
+              <p>Offices, restaurants, hotels.</p>
+               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDYETVIYAxoR9BahSEPyvN_X4Ifv8ztMg4iIP9wmcdwQ&s=10" class="img-fluid shadow" alt="gallery">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-up" data-aos-delay="100">
+          <div class="card border-0 shadow-sm h-100 rounded-0">
+            <div class="card-body">
+              <h5 class="serif"><i class="fas fa-utensils gold me-2"></i>Modular Kitchen</h5>
+              <p>Elegant, functional kitchens.</p>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-e1QDO0wjgLT3-BvwmB7wX5tYKpZV9PzAKm_YsCJ3mQ&s=10" class="img-fluid shadow" alt="gallery">
+
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-up" data-aos-delay="150">
+          <div class="card border-0 shadow-sm h-100 rounded-0">
+            <div class="card-body">
+              <h5 class="serif"><i class="fas fa-couch gold me-2"></i>Living Room Design</h5>
+              <p>Sophisticated living spaces.</p>
+                      <img src="https://housedesigner.com/wp-content/uploads/2024/07/LIVING_AREA_CAM_001-min-1390x782-optimized.jpg" class="img-fluid shadow" alt="gallery">
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-up" data-aos-delay="200">
+          <div class="card border-0 shadow-sm h-100 rounded-0">
+            <div class="card-body">
+              <h5 class="serif"><i class="fas fa-bed gold me-2"></i>Bedroom Design</h5>
+              <p>Sanctuary-like bedrooms.</p>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSWS2Lu0ZeTTv0B9b3Q69dSjUOGsfhacRqxAC_tS9Q2NgeZL1O8oqhNGQe&s=10" class="img-fluid shadow" alt="gallery">
+
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-up" data-aos-delay="250">
+          <div class="card border-0 shadow-sm h-100 rounded-0">
+            <div class="card-body">
+              <h5 class="serif"><i class="fas fa-paint-roller gold me-2"></i>Renovation</h5>
+              <p>Full renovation & restoration.</p>
+                                                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJTiVJZhRzT_12Wvlcw-f5IHRgnr0rG9XTtqAyzNsCQUcqHXfFUe72YJT5&s=10" class="img-fluid shadow" alt="gallery">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section-padding bg-light">
+    <div class="container">
+      <h2 class="text-center display-5 serif" data-aos="fade-up">Featured <span class="gold">Projects</span></h2>
+      <div class="text-center mb-4" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="living">Living Room</button>
+        <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+        <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+      </div>
+      <div class="row g-4" id="projectGrid">
+        <div class="col-md-4 project-item living">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRsovODsF0lonrhxE1FS40S9NrZpVpX9BjgjPyieGnSf_yEg6ZVLi4DV2Y&s=10" class="img-fluid shadow" alt="living room">
+        </div>
+        <div class="col-md-4 project-item bedroom">
+          <img src="https://bonito.in/wp-content/uploads/2022/01/Top-7-Master-Bed-Room-10.jpg" class="img-fluid shadow" alt="bedroom">
+        </div>
+        <div class="col-md-4 project-item kitchen">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbaoPHPb4UQqm_kMzk4oK5NgOZ6ilbrxq9pQL39nDqeQ&s=10" class="img-fluid shadow" alt="kitchen">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before & After -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="text-center display-5 serif" data-aos="fade-up">Before <span class="gold">&</span> After</h2>
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="before-after-container">
+            <img src="https://i.pinimg.com/736x/b1/8c/37/b18c37e268ee0f3701399cd455716ffb.jpg" alt="before" class="img-fluid shadow">
+          </div>
+          <p class="text-center mt-3">Before</p>
+        </div>
+        <div class="col-md-5" data-aos="fade-left">
+          <div class="before-after-container">
+            <img src="https://i.pinimg.com/736x/16/93/d6/1693d6565d35961065ed2ed929a2ffd1.jpg" alt="after" class="img-fluid shadow">
+          </div>
+          <p class="text-center mt-3">After</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section-padding">
+    <div class="container text-center">
+      <h2 class="display-5 serif" data-aos="fade-up"><span class="gold">Gallery</span></h2>
+      <div class="row g-4 mt-4">
+        <div class="col-md-4">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9MEhyGoY78KPHh1QnjSpOn1nwiOEU-k9cR9fkq-m_eLQE8uTzPf8zw0g&s=10" class="img-fluid shadow" alt="gallery">
+        </div>
+        <div class="col-md-4">
+          <img src="https://www.marthastewart.com/thmb/GfgTxAuPkmX2dKqzYFgV8U_PHr4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/LivingwithLolo_CreditLifeCreated-79dc36b430f84bf5922659ed555c3cb7.jpg" class="img-fluid shadow" alt="gallery">
+        </div>
+        <div class="col-md-4">
+          <img src="https://media.designcafe.com/wp-content/uploads/2020/01/21001519/best-wall-decor-for-living-room.jpg" class="img-fluid shadow" alt="gallery">
+        </div>
+        <div class="col-md-4">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_nw2DiWjG_ngVdIgS4NYCvFIFYX_MjMMl-s72_xGCSxChxBQnTid3I7s&s=10" class="img-fluid shadow" alt="gallery">
+        </div>
+        <div class="col-md-4">
+          <img src="https://i.pinimg.com/736x/7e/a0/3e/7ea03e9c0827c0fb64b8c7e74ec95af9.jpg" class="img-fluid shadow" alt="gallery">
+        </div>
+        <div class="col-md-4">
+          <img src="https://www.andacademy.com/resources/wp-content/uploads/2024/09/image21.jpg" class="img-fluid shadow" alt="gallery">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Counter -->
+  <section class="section-padding text-white counter-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600') center/cover no-repeat;">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md-3">
+          <h2 class="display-3 gold counter" data-target="120">0</h2>
+          <p>Projects</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="display-3 gold counter" data-target="85">0</h2>
+          <p>Happy Clients</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="display-3 gold counter" data-target="15">0</h2>
+          <p>Awards</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="display-3 gold counter" data-target="8">0</h2>
+          <p>Years</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section-padding bg-primary-custom text-white">
+    <div class="container">
+      <h2 class="text-center gold display-5 serif" data-aos="fade-up">Let's Create</h2>
+      <div class="row mt-5">
+        <div class="col-md-6" data-aos="fade-right">
+          <form>
+            <input type="text" placeholder="Name" class="form-control mb-3 rounded-0" />
+            <input type="email" placeholder="Email" class="form-control mb-3 rounded-0" />
+            <input type="text" placeholder="Subject" class="form-control mb-3 rounded-0" />
+            <textarea class="form-control rounded-0" rows="4" placeholder="Message"></textarea>
+            <button class="btn btn-gold mt-3">Send</button>
+          </form>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="mb-3"><i class="fas fa-map-marker-alt gold me-2"></i> M/28, ARGORA HOUSING COLONY, NEAR ARGORA FIELD, RANCHI – 834002</div>
+          <div><i class="fas fa-phone gold me-2"></i> +91 9031810672</div>
+          <div><i class="fas fa-envelope gold me-2"></i> info@zyyron.com</div>
+          <div class="mt-4">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234642.5465761954!2d85.23272889423434!3d23.34449924686753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e1e5e2b7e8b1%3A0x4f2b5e7e9d6c8b3b!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1740000000000" 
+              width="100%" 
+              height="130" 
+              style="border:0; border-radius:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5" style="border-top: 3px solid var(--gold);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="serif">Interior Design</h5>
+          <p>We create places that deserve to be called Home.</p>
+          <div>
+            <a href="#" class="text-gold me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gold me-3"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="text-gold"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5 class="serif">Quick Links</h5>
+          <a href="#about" class="text-white-50 d-block">About</a>
+          <a href="#services" class="text-white-50 d-block">Services</a>
+          <a href="#projects" class="text-white-50 d-block">Projects</a>
+        </div>
+        <div class="col-md-4">
+          <h5 class="serif">Newsletter</h5>
+          <input type="email" placeholder="Email" class="form-control rounded-0">
+          <button class="btn btn-gold mt-2">Done</button>
+        </div>
+      </div>
+      <hr class="mt-4">
+      <div class="text-center text-white-50">© 2026. All rights reserved Zyyron.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
