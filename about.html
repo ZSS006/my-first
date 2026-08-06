@@ -3,56 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- SEO -->
-  <meta name="description" content="Elite Interior Studio: Art of Living. Bespoke luxury interior design for residential, commercial, and hospitality spaces." />
-  <link rel="canonical" href="https://eliteinteriorstudio.com/" />
-  <meta property="og:title" content="Elite Interior Studio — Art of Living" />
-  <meta property="og:description" content="Bespoke luxury interiors that tell your story." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪞</text></svg>" />
+    <title>About Us</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #111827;
+        }
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
 
-  <!-- Swiper.js -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        body{
+            background:#f8f8f8;
+            color:#333;
+            cursor: none;
+        }
 
-  <!-- AOS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+        .serif {
+            font-family: 'Playfair Display', 'Georgia', serif;
+        }
 
-  <!-- External Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+        .gold, .text-gold {
+            color: var(--gold) !important;
+        }
+
+        nav{
+            background:#111;
+            padding:18px;
+            text-align:center;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 20px;
+            font-weight:bold;
+        }
+
+        nav a:hover{
+            color:#f4c542;
+        }
+
+        /* Reduced banner height & tighter padding */
+        .banner{
+            height:28vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://static.asianpaints.com/content/dam/asianpaintsbeautifulhomes/202207/10-best-tips-on-budget-friendly-home-interior-designs/interior-design-low-cost.jpg") center/cover;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            color: var(--gold);
+            font-size:42px;
+            font-weight:bold;
+            font-family: 'Playfair Display', 'Georgia', serif;
+        }
+
+        /* Reduced top margin to remove big vertical gap */
+        .about{
+            width:90%;
+            max-width:1100px;
+            margin:30px auto 50px; /* Top margin reduced from 60px to 30px */
+            display:flex;
+            gap:40px;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .about img{
+            width:450px;
+            border-radius:10px;
+            object-fit: cover;
+        }
+
+        .about-text{
+            flex:1;
+        }
+
+        .about-text h2{
+            color:#d4a017;
+            margin-bottom:15px;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 2rem;
+        }
+
+        .about-text p{
+            line-height:1.8;
+            margin-bottom:15px;
+            color: #444;
+        }
+
+        .process{
+            padding:50px 10%;
+            background:white;
+            text-align:center;
+        }
+
+        .process h2{
+            margin-bottom:30px;
+            color:#d4a017;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 2.2rem;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:#f2f2f2;
+            padding:30px;
+            border-radius:10px;
+            transition:.3s;
+            border: none;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h3{
+            color:#d4a017;
+            margin-bottom:15px;
+        }
+
+        /* Footer Styles */
+        footer {
+            border-top: 3px solid var(--gold);
+            cursor: auto;
+        }
+
+        .form-control {
+            border-radius: 0;
+            padding: 10px 12px;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: #000;
+            font-weight: 700;
+            border: none;
+            border-radius: 0;
+            padding: 10px 24px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            background-color: #b89628;
+            color: #fff;
+        }
+
+        /* Floating Sidebar Buttons */
+        .floating-sidebar {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .floating-btn {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .floating-btn:hover {
+            color: #fff;
+            opacity: 0.85;
+        }
+
+        .bg-envelope { background-color: var(--gold); }
+        .bg-phone { background-color: #1f2937; }
+        .bg-whatsapp { background-color: #25d366; }
+        .bg-top { background-color: #000000; border: 1px solid #333; }
+
+        /* Custom Glowing Cursor */
+        .cursor-glow {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 162, 39, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 99999;
+            transition: width 0.3s, height 0.3s, background 0.3s;
+        }
+
+        .cursor-glow.hover {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(201, 162, 39, 0.15) 0%, transparent 70%);
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="#"><span>Interior</span></a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
+
+<div class="cursor-glow"></div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="banner">
+    About Us
+</div>
+
+<section class="about">
+    <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Interior">
+
+    <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>
+            Elite Interior Studio creates luxurious and modern interiors that combine beauty, comfort, and functionality. Our team specializes in residential, commercial, and office interior design.
+        </p>
+        <p>
+            Every project is thoughtfully designed to reflect our client's lifestyle while maintaining elegance and timeless appeal.
+        </p>
+        <p>
+            From concept to completion, we focus on quality, creativity, and attention to every detail.
+        </p>
     </div>
-  </nav>
+</section>
 
+<section class="process">
+    <h2>Our Design Process</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>01</h3>
+            <h4>Consultation</h4>
+            <p>Understanding your needs and ideas.</p>
+        </div>
+        <div class="card">
+            <h3>02</h3>
+            <h4>Planning</h4>
+            <p>Creating layouts and selecting materials.</p>
+        </div>
+        <div class="card">
+            <h3>03</h3>
+            <h4>Design</h4>
+            <p>Developing stunning 3D concepts and interiors.</p>
+        </div>
+        <div class="card">
+            <h3>04</h3>
+            <h4>Execution</h4>
+            <p>Turning your dream interior into reality.</p>
+        </div>
+    </div>
+</section>
 
+<!-- Floating Sidebar Buttons -->
+<div class="floating-sidebar d-none d-md-flex">
+    <a href="mailto:info@zyyron.com" class="floating-btn bg-envelope"><i class="fas fa-envelope"></i></a>
+    <a href="tel:+919031810672" class="floating-btn bg-phone"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/919031810672" target="_blank" class="floating-btn bg-whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" class="floating-btn bg-top"><i class="fas fa-arrow-up"></i></a>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-5">
+    <div class="container text-start">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h5 class="serif gold">Interior Design</h5>
+                <p class="text-white-50">We create places that deserve to be called Home.</p>
+                <div class="fs-5">
+                    <a href="#" class="text-gold me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gold me-3"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" class="text-gold"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5 class="serif gold">Quick Links</h5>
+                <a href="about.html" class="text-white-50 d-block text-decoration-none mb-1">About</a>
+                <a href="services.html" class="text-white-50 d-block text-decoration-none mb-1">Services</a>
+                <a href="projects.html" class="text-white-50 d-block text-decoration-none mb-1">Projects</a>
+                <a href="gallery.html" class="text-white-50 d-block text-decoration-none mb-1">Gallery</a>
+                <a href="contact.html" class="text-white-50 d-block text-decoration-none">Contact</a>
+            </div>
+            <div class="col-md-4">
+                <h5 class="serif gold">Newsletter</h5>
+                <div class="d-flex flex-column gap-2">
+                    <input type="email" placeholder="Email" class="form-control">
+                    <button class="btn btn-gold w-auto align-self-start px-4">Done</button>
+                </div>
+            </div>
+        </div>
+        <hr class="mt-4 border-secondary">
+        <div class="text-center text-white-50 small">© 2026. All rights reserved Zyyron.</div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom Cursor Script -->
+<script>
+    const cursor = document.querySelector('.cursor-glow');
+    
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    const hoverElements = document.querySelectorAll('nav a, .card, .banner, .about img, button, .floating-btn, footer a');
+    
+    hoverElements.forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            cursor.classList.add('hover');
+        });
+        element.addEventListener('mouseleave', function() {
+            cursor.classList.remove('hover');
+        });
+    });
+</script>
 
 </body>
 </html>

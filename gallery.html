@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Interior Design</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    :root {
+      --gold: #d4af37;
+      --dark-bg: #111827;
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .serif {
+      font-family: 'Playfair Display', 'Georgia', serif;
+    }
+
+    .gold, .text-gold {
+      color: var(--gold) !important;
+    }
+
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--dark-bg);
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin: 0 10px;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--gold) !important;
+    }
+
+    /* Gallery Grid Items */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(17, 24, 39, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-overlay i {
+      color: var(--gold);
+      font-size: 2rem;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .btn-gold {
+      background-color: var(--gold);
+      color: #000;
+      font-weight: 600;
+      border: none;
+      border-radius: 0;
+    }
+
+    .btn-gold:hover {
+      background-color: #b89628;
+      color: #fff;
+    }
+
+    footer {
+      border-top: 3px solid var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand serif fs-3 text-gold fw-bold" href="index.html">Interior</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">PROJECTS</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">GALLERY</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Gallery Section -->
+  <section class="section-padding" style="background-color: #f8f9fa;">
+    <div class="container">
+      
+      <!-- Heading -->
+      <div class="text-center mb-5">
+        <h2 class="display-4 serif fw-bold text-dark">
+          Our <span class="gold">Gallery</span>
+        </h2>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="row g-4">
+        
+        <!-- Image 1 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="gallery-item shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+            <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Interior Gallery 1" />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="gallery-item shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+            <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Interior Gallery 2" />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="gallery-item shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+            <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Interior Gallery 3" />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="gallery-item shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+            <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Interior Gallery 4" />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 5 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="gallery-item shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+            <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Interior Gallery 5" />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 6 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="gallery-item shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+            <img src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Interior Gallery 6" />
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Lightbox Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0 text-end">
+          <button type="button" class="btn-close btn-close-white mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
+          <img id="modalImage" src="" class="img-fluid w-100 shadow-lg" alt="Enlarged View" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="serif gold">Interior Design</h5>
+          <p class="text-white-50">We create places that deserve to be called Home.</p>
+          <div class="fs-5">
+            <a href="#" class="text-gold me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gold me-3"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="text-gold"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5 class="serif gold">Quick Links</h5>
+          <a href="about.html" class="text-white-50 d-block text-decoration-none mb-1">About</a>
+          <a href="services.html" class="text-white-50 d-block text-decoration-none mb-1">Services</a>
+          <a href="projects.html" class="text-white-50 d-block text-decoration-none">Projects</a>
+        </div>
+        <div class="col-md-4">
+          <h5 class="serif gold">Newsletter</h5>
+          <div class="d-flex flex-column gap-2">
+            <input type="email" placeholder="Email" class="form-control rounded-0">
+            <button class="btn btn-gold w-auto align-self-start px-4">Done</button>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-4 border-secondary">
+      <div class="text-center text-white-50 small">© 2026. All rights reserved Zyyron.</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modal Script -->
+  <script>
+    function showImage(src) {
+      document.getElementById('modalImage').src = src;
+    }
+  </script>
+</body>
+</html>
