@@ -255,23 +255,32 @@
 
       <div class="row g-5 align-items-start">
         <!-- Form -->
-        <div class="col-lg-6">
-          <form action="#" method="POST">
-            <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Name" required />
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Email" required />
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Subject" required />
-            </div>
-            <div class="mb-4">
-              <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-gold">SEND</button>
-          </form>
-        </div>
+
+
+
+<!-- Form -->
+<div class="col-lg-6">
+  <form id="contactForm" action="https://formsubmit.co/info@zyyron.com" method="POST">
+    <!-- FormSubmit settings -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    
+    <div class="mb-3">
+      <input type="text" name="Name" id="name" class="form-control" placeholder="Name" required />
+    </div>
+    <div class="mb-3">
+      <input type="email" name="Email" id="email" class="form-control" placeholder="Email" required />
+    </div>
+    <div class="mb-3">
+      <input type="text" name="_subject" id="subject" class="form-control" placeholder="Subject" required />
+    </div>
+    <div class="mb-4">
+      <textarea name="Message" id="message" class="form-control" rows="5" placeholder="Message" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-gold">SEND</button>
+  </form>
+</div>
+
 
         <!-- Info & Map -->
         <div class="col-lg-6 text-white">
